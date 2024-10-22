@@ -33,7 +33,10 @@ So you decide to go back to the living room
 """
 
 puzzle_1_text = """
-You look at the puzzle and see that it's a note that says, 1+1=?
+You look at the puzzle and see that it's a note that says:
+mushy peas - y -(π - i ) -eas + living room - opposite of death 
++ basketball -b -(overall - (opposite of under))'
+
 
 Now that you have seen the puzzle you decide to enter the solution to the computer.
 To try and login and get the code for the door.

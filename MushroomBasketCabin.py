@@ -81,9 +81,10 @@ def solve_puzzle():
     done = False
     while not done:
         choise_solve_puzzle = input("Password: ")
-        if choise_solve_puzzle == "2":
+        if choise_solve_puzzle == "mushroombasket":
             done = True
-
+        else:
+            print("\nIncorrect. Try again.\n")
 main() 
 
 
