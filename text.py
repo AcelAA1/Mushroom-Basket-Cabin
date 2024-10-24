@@ -39,10 +39,6 @@ puzzle_1_text = """
 You look at the puzzle and see that it's a note that says:
 mushy peas - y -(π - i ) -eas + living room - opposite of dying 
 + basketball -b -(overall - (opposite of under))'
-
-
-Now that you have seen the puzzle you decide to enter the solution to the computer.
-To try and login and get the code for the door.
 """
 
 try_computer_to_early = """
@@ -63,4 +59,19 @@ Thanks for playing!
 call_112 = """
 You hear one tone going out and then the connection breaks.
 
+"""
+
+unlock_bedroom = """
+You try to open the door, it's locked. 
+But you have a key, so you use it! 
+You unlock the door and enter the bedroom.
+"""
+
+bedroom_description = """ 
+The bedroom has a cozy looking bed and red walls, 
+and on one wall you see a floor plan of the building
+that ha put a number on all the rooms
+The kitchen has been marked with a 1
+The bedroom has been marked with a 2
+The livingroom has been marked with a 3
 """
