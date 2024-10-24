@@ -24,8 +24,11 @@ Looking around you realise you are in the living room of the house and in it you
 and what seems to be the way to the kitchen as well as a master bedroom door.
 """
 desk_descprition = """
-On the desk you find a note which seems to have a puzzle on it 
-and on the computer you see a post it note that says 'enter password to get door code' 
+On the desk you find a note which seems to have a puzzle on it.
+On the computer you see a post it note that says 'enter password to get door code' 
+"""
+key_on_desk ="""
+You also see a key that you pick upp and add to your inventory.
 """
 locked_room = """
 The door is looked, 
@@ -34,7 +37,7 @@ So you decide to go back to the living room
 
 puzzle_1_text = """
 You look at the puzzle and see that it's a note that says:
-mushy peas - y -(π - i ) -eas + living room - opposite of death 
+mushy peas - y -(π - i ) -eas + living room - opposite of dying 
 + basketball -b -(overall - (opposite of under))'
 
 
