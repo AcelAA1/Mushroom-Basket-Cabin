@@ -69,9 +69,49 @@ You unlock the door and enter the bedroom.
 
 bedroom_description = """ 
 The bedroom has a cozy looking bed and red walls, 
-and on one wall you see a floor plan of the building
-that ha put a number on all the rooms
+and on one wall you see a floor plan of the building.
+"""
+
+puzzle_2_text = """
+As you approach the bed you notice the blanket on top displaying numbers and letters in a pattern:
+
+  2 1   4 3 
+  4 x   2 1 
+
+  1 z   3 y
+  3 4   1 2 
+
+  What can x, y and z be?
+"""
+floor_plan_text = """
+On the floor plan all rooms have been marked with a number 
 The kitchen has been marked with a 1
 The bedroom has been marked with a 2
 The livingroom has been marked with a 3
+"""
+
+kitchen_descprition = """
+The kitchen looks quite kitchenie, it has a kitchencounter, a sink and a refridgerator 
+and other kitchen like appliances and objects. 
+You spot a note on the counter.
+"""
+puzzle_3_text = """
+numvbesog aw0oiegv
+"""
+sink_lore = """
+You turn the facuet on.
+You look at the running water.
+You turn the facuet off.
+"""
+
+fridge_lore = """
+You open the fridge.
+You see a cartoon of spoiled milk.
+The smell makes you gag.
+You close the fridge.
+"""
+unlock_kitchen = """
+You try to open the door, it's locked. 
+But you have a key, so you use it! 
+You unlock the door and enter the kitchen.
 """
