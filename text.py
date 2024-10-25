@@ -96,7 +96,14 @@ and other kitchen like appliances and objects.
 You spot a note on the counter.
 """
 puzzle_3_text = """
-The note says: 1+1 = ?
+The note says:
+Mushroom pie recipe:
+1dl Milk + 1dl Flour = 7
+1dl Milk + 1 Egg = 10
+1dl Flour + 1 Egg = 9
+1kg Mushrooms + 1 Egg = 15
+
+What number would 1kg Mushrooms represent?
 """
 sink_lore = """
 You turn the facuet on.
