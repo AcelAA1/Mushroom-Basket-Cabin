@@ -16,7 +16,7 @@ uncoperative = 0
 inventory = []
 been_to_bedroom = False
 been_to_kitchen = False
-answers = {"desk_puzzle":"mushroombasket","bedroom_puzzle":"342","kitchen_puzzle":"42"}
+answers = {"desk_puzzle":"mushroombasket","bedroom_puzzle":"342","kitchen_puzzle":"2"}
 def main():
     print(lore_list[0])
     enter_cabin_scenario()   
@@ -171,7 +171,7 @@ def computer_login():
         puzzle_choice = menu("What do you do on the computer",4)
         if puzzle_choice == 1:
                 choice_computer_login = input("Password: ")
-                if choice_computer_login == "342mushroombasket":
+                if choice_computer_login == "2342mushroombasket":
                     win = True
                     trying_puzzle = False
                 else:

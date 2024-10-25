@@ -96,7 +96,7 @@ and other kitchen like appliances and objects.
 You spot a note on the counter.
 """
 puzzle_3_text = """
-numvbesog aw0oiegv
+The note says: 1+1 = ?
 """
 sink_lore = """
 You turn the facuet on.
