@@ -8,17 +8,13 @@ options_list = [["Open door","Text host"],
                 ["Try to solve the puzzle and save the solution to your inventory","Give up for now and come back later"],
                 ["Approach bed","Inspect floor plan","Go back to the living room"],
                 ["Inspect the note on the counter","Go to the sink","Go and open the Fridge","Go back to the living room"]]
-lore_list = [introduction_text,enter_cabin_text,host_responce_1,host_responce_2,
-             living_room_description, desk_descprition, locked_room,puzzle_1_text,
-             try_computer_to_early, win_text, call_112, key_on_desk, unlock_bedroom,
-             bedroom_description, puzzle_2_text, floor_plan_text,kitchen_descprition,puzzle_3_text,sink_lore,fridge_lore,unlock_kitchen]
 uncoperative = 0
 inventory = []
 been_to_bedroom = False
 been_to_kitchen = False
 answers = {"desk_puzzle":"mushroombasket","bedroom_puzzle":"342","kitchen_puzzle":"9"}
 def main():
-    print(lore_list[0])
+    print(introduction_text)
     enter_cabin_scenario()   
     start_plaiyng_scenario()   
     
@@ -45,28 +41,26 @@ def enter_cabin_scenario():
     choice_1 = menu(menu_prompts[0], 0)
     global uncoperative
     if choice_1 == 1:
-        print(lore_list[1])        
+        print(enter_cabin_text)        
     elif choice_1 == 2:
-        print(lore_list[2])
+        print(host_responce_1)
         uncoperative += 1
         if uncoperative >= 10:
             print("Just move on!\n")
         enter_cabin_scenario()
 
-
 def start_plaiyng_scenario():
-        choice_2 = menu(menu_prompts[1], 1)
-        if choice_2 == 1:
-            print(lore_list[3])
-            start_plaiyng_scenario()
-        elif choice_2 == 2:
-            print(lore_list[4])
-            living_room_scenario()
-            # giving the user the illusion of choice as still first version will be adjusted later
-        elif choice_2 == 3:
-            print(lore_list[10])
-            start_plaiyng_scenario()
-
+    choice_2 = menu(menu_prompts[1], 1)
+    if choice_2 == 1:
+        print(host_responce_2)
+        start_plaiyng_scenario()
+    elif choice_2 == 2:
+        print(living_room_description)
+        living_room_scenario()
+        # giving the user the illusion of choice as still first version will be adjusted later
+    elif choice_2 == 3:
+        print(call_112)
+        start_plaiyng_scenario()
 
 def living_room_scenario():
     global been_to_bedroom
@@ -74,9 +68,9 @@ def living_room_scenario():
     choice_3 = menu(menu_prompts[2], 2)
     if choice_3 == 1:
         if "key" in inventory:
-            print(lore_list[5])
+            print(desk_descprition)
         else:
-            print(lore_list[5],lore_list[11])
+            print(desk_descprition,key_on_desk)
             inventory.append("key")
             print(f"Your inventory:{inventory}")
         desk_scenario()
@@ -84,65 +78,62 @@ def living_room_scenario():
         if "key" in inventory and been_to_kitchen:
             kitchen_scenario()
         elif "key" in inventory and not been_to_kitchen:
-            print(lore_list[20])
+            print(unlock_kitchen)
             been_to_kitchen = True
             kitchen_scenario()
         else:
-            print(lore_list[6])
+            print(locked_room)
             living_room_scenario()
     elif choice_3 == 3:
         if "key" in inventory and been_to_bedroom:
             bedroom_scenario()
         elif "key" in inventory and not been_to_bedroom:
-            print(lore_list[12])
+            print(unlock_bedroom)
             been_to_bedroom = True
             bedroom_scenario()
         else:    
-            print(lore_list[6])
+            print(locked_room)
             living_room_scenario()
         # same lore for 2 and 3 as this is version 1 and functionality is still fairly basic
         # will be adjusted in future iteretions depending on available time
 
-
 def desk_scenario():
     choice_4 = menu(menu_prompts[2], 3)
-
     if choice_4 == 1:
-        print(lore_list[7])
+        print(puzzle_1_text)
         solve_puzzle("desk_puzzle")
         desk_scenario()
     elif choice_4 == 2:
-        print(lore_list[8])
+
         computer_login()
     elif choice_4 == 3:
         living_room_scenario()
-  
 
 def bedroom_scenario():
-    print(lore_list[13])
+    print(bedroom_description)
     choice_5 = menu(menu_prompts[2],6)
     if choice_5 == 1:
-        print(lore_list[14])
+        print(puzzle_2_text)
         solve_puzzle("bedroom_puzzle")
         bedroom_scenario()
     elif choice_5 == 2:
-        print(lore_list[15])
+        print(floor_plan_text)
         bedroom_scenario()
     elif choice_5 == 3:
         living_room_scenario()
 
 def kitchen_scenario():
-    print(lore_list[16])
+    print(kitchen_descprition)
     choice_6 = menu(menu_prompts[2], 7)
     if choice_6 == 1:
-        print(lore_list[17])
+        print(puzzle_3_text)
         solve_puzzle("kitchen_puzzle")
         kitchen_scenario()
     elif choice_6 == 2:
-        print(lore_list[18])
+        print(sink_lore)
         kitchen_scenario()
     elif choice_6 == 3:
-        print(lore_list[19])
+        print(fridge_lore)
         kitchen_scenario()
     elif choice_6 == 4:
         living_room_scenario()
@@ -182,8 +173,10 @@ def computer_login():
             desk_scenario()
         
     if win:
-        print(lore_list[9])
+        print(win_text)
+        input("Press enter to continiue")
+        print(credits)
+        input("Press enter to continiue")
+        print(host_final_responce)
         
 main() 
-
-

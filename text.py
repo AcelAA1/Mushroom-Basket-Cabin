@@ -16,7 +16,7 @@ Host says 'the door is open there is a code inside'
 Upon reciving this information you decide to open the door
 """
 host_responce_2 = """
-Host says 'code in house, look around'
+Host says 'The code is somewhere in the house, look around'
 
 """
 living_room_description = """
@@ -32,7 +32,7 @@ You also see a key that you pick upp and add to your inventory.
 """
 locked_room = """
 The door is looked, 
-So you decide to go back to the living room
+So you decide to go back to the living room.
 """
 
 puzzle_1_text = """
@@ -121,4 +121,28 @@ unlock_kitchen = """
 You try to open the door, it's locked. 
 But you have a key, so you use it! 
 You unlock the door and enter the kitchen.
+"""
+
+credits = """
+         Programming
+        Alec Andin
+        Amanda Niklasson
+       
+         Lore writing
+        Alec Andin
+        Amanda Niklasson
+        
+"""
+
+host_final_responce = """
+Suddenly you hear a creepy voice. 
+'You did it! You solved all of my puzzles!' 
+Where does that sound come from?
+You look around and see that that there are relatively hidden speakers above the door.
+'I have been watching you...'
+'I'm so happy that someone finally came to this cabin.'
+'I have worked very hard on these puzzles.'
+This is getting wierd, you decide to go home instead.
+
+The real end!
 """
