@@ -8,15 +8,15 @@ options_list = [["Open door","Text host"],
                 ["Try to solve the puzzle and save the solution to your inventory","Give up for now and come back later"],
                 ["Approach bed","Inspect floor plan","Go back to the living room"],
                 ["Inspect the note on the counter","Go to the sink","Go and open the Fridge","Go back to the living room"]]
-uncoperative = 0
+
 inventory = []
 been_to_bedroom = False
 been_to_kitchen = False
 answers = {"desk_puzzle":"mushroombasket","bedroom_puzzle":"342","kitchen_puzzle":"9"}
 def main():
     print(introduction_text)
-    enter_cabin_scenario()   
-    start_plaiyng_scenario()   
+    enter_cabin_scenario(0)   
+    start_plaiyng_scenario(0,False)   
     
 def menu(prompt,menucount):
     print(prompt)
@@ -37,30 +37,41 @@ def menu(prompt,menucount):
         print("\nPlease only enter numeric values. Try Again\n")
         return menu(prompt,menucount)        
     
-def enter_cabin_scenario():
+def enter_cabin_scenario(uncoperative):
     choice_1 = menu(menu_prompts[0], 0)
-    global uncoperative
+    uncoperative = uncoperative
     if choice_1 == 1:
         print(enter_cabin_text)        
     elif choice_1 == 2:
         print(host_responce_1)
         uncoperative += 1
-        if uncoperative >= 10:
+        if uncoperative >= 4:
             print("Just move on!\n")
-        enter_cabin_scenario()
+        enter_cabin_scenario(uncoperative)
 
-def start_plaiyng_scenario():
+def start_plaiyng_scenario(uncoperative,connection_check):
+    uncoperative = uncoperative
+    connection_check = connection_check
     choice_2 = menu(menu_prompts[1], 1)
-    if choice_2 == 1:
+    if choice_2 == 1 and connection_check:
         print(host_responce_2)
-        start_plaiyng_scenario()
+        print(connection_thought)
+        start_plaiyng_scenario(uncoperative,connection_check)
+    elif choice_2 == 1 and not connection_check:
+        print(host_responce_2)
+        start_plaiyng_scenario(uncoperative,connection_check)
     elif choice_2 == 2:
         print(living_room_description)
         living_room_scenario()
         # giving the user the illusion of choice as still first version will be adjusted later
     elif choice_2 == 3:
         print(call_112)
-        start_plaiyng_scenario()
+        uncoperative += 1
+        if uncoperative >= 4:
+            print("It seems like there is no connection\n")
+            connection_check = True
+
+        start_plaiyng_scenario(uncoperative,connection_check)
 
 def living_room_scenario():
     global been_to_bedroom

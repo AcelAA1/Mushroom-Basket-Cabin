@@ -146,3 +146,7 @@ This is getting wierd, you decide to go home instead.
 
 The real end!
 """
+connection_thought = """
+You have connection to contact the host...
+but not for calling 112... strange
+"""
