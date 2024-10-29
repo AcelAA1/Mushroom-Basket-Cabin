@@ -87,7 +87,7 @@ floor_plan_text = """
 On the floor plan all rooms have been marked with a number 
 The kitchen has been marked with a 1
 The bedroom has been marked with a 2
-The livingroom has been marked with a 3
+The living room has been marked with a 3
 """
 
 kitchen_descprition = """

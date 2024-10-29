@@ -1,3 +1,4 @@
+import sys
 from text import *
 menu_prompts = ["Do you want to try to open the door or text the host for information?\n","Now how will you get out?\n","What do you do?\n"]
 options_list = [["Open door","Text host"],
@@ -12,7 +13,7 @@ options_list = [["Open door","Text host"],
 inventory = []
 been_to_bedroom = False
 been_to_kitchen = False
-answers = {"desk_puzzle":"mushroombasket","bedroom_puzzle":"342","kitchen_puzzle":"9"}
+answers = {"living_room_puzzle":"mushroombasket","bedroom_puzzle":"342","kitchen_puzzle":"9"}
 def main():
     print(introduction_text)
     enter_cabin_scenario(0)   
@@ -63,7 +64,7 @@ def start_plaiyng_scenario(uncoperative,connection_check):
     elif choice_2 == 2:
         print(living_room_description)
         living_room_scenario()
-        # giving the user the illusion of choice as still first version will be adjusted later
+    
     elif choice_2 == 3:
         print(call_112)
         uncoperative += 1
@@ -105,14 +106,13 @@ def living_room_scenario():
         else:    
             print(locked_room)
             living_room_scenario()
-        # same lore for 2 and 3 as this is version 1 and functionality is still fairly basic
-        # will be adjusted in future iteretions depending on available time
+        
 
 def desk_scenario():
     choice_4 = menu(menu_prompts[2], 3)
     if choice_4 == 1:
         print(puzzle_1_text)
-        solve_puzzle("desk_puzzle")
+        solve_puzzle("living_room_puzzle")
         desk_scenario()
     elif choice_4 == 2:
 
@@ -189,5 +189,6 @@ def computer_login():
         print(credits)
         input("Press enter to continiue")
         print(host_final_responce)
+        sys.exit
         
 main() 
