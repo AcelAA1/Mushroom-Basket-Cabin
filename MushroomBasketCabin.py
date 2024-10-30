@@ -35,7 +35,7 @@ def menu(prompt,menucount):
             print("\nInvalid option. Try again\n")
             return menu(prompt,menucount)
     else:
-        print("\nPlease only enter numeric values. Try Again\n")
+        print("\nPlease only enter numeric values in the menu. Try Again\n")
         return menu(prompt,menucount)        
     
 def enter_cabin_scenario(uncoperative):
